@@ -1,0 +1,30 @@
+﻿@model PersonasListadoModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<a class="nav-link text-dark" asp-area="" asp-controller="Personas" asp-action="Editar" asp-rout-id="0" >Nuevo Cliente</a>
+<table>
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var persona in Model.Listado)
+        {            
+        <tr>
+            <td>@persona.Id</td>
+            <td>@persona.Nombre</td>
+            <td>@persona.Direccion</td>
+            <td>@persona.Codigo</td>
+            <td>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Personas" asp-action="Editar" asp-route-id="personas.Id" >Editar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

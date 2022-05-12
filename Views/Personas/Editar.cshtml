@@ -1,0 +1,45 @@
+﻿@model Personas
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="row">
+<div class="col-nd-4">
+    <form asp-action="Editar" method="post">
+        <div class="form-group">
+            <label asp-for="Id" class="control-label"></label>
+            <input asp-for="Id" class="form-control" />
+         </div>
+         <div class="form-group">
+             <label asp-for="Nombre" class="control-label"></label>
+        <input asp-for="Nombre" class="form-control" /><br />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+          </div>
+           <div class="form-group">
+               <label asp-for="Direccion" class="control-label"></label>
+        <input asp-for="Direccion" class="form-control" /><br />
+         <span asp-validation-for="Direccion" class="text-danger"></span>
+         </div>
+           <div class="form-group">
+               <label asp-for="Codigo" class="control-label"></label>
+        <input asp-for="Codigo" class="form-control" /><br />
+         <span asp-validation-for="Codigo" class="text-danger"></span>
+         </div>
+          <div class="form-group">
+              <label asp-for="TipoId" class="control-label"></label>
+              <select asp-for="TipoId" asp-items="@ViewBag.Tipos" class="form-control">
+                  <option value="">Seleccionar</option>
+               </select>
+        <</div>
+          <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-primary" />
+        <</div>
+       </form>
+     </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
